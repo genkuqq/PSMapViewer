@@ -59,7 +59,7 @@ function Map(prop) {
             <LayersControl.BaseLayer name="Base" checked>
               <ImageOverlay
                 url={
-                  "/mapimages/" +
+                  "./mapimages/" +
                   prop.name +
                   "/" +
                   prop.name +
