@@ -15,11 +15,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14.x"
-      - name: Installing Leaflet
-        run: npm i leaflet && npm i react-leaflet
         
       - name: Installing my packages
-        run: npm ci
+        run: npm i
 
       - name: Build my App
         run: npm run build && npm run export && touch ./out/.nojekyll
