@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === "production";
 const nextConfig = {
-  basePath: "/PsychonautStationMapViewer",
+  basePath: isProd ? "/PsychonautStationMapViewer" : "",
   output: "export",
 };
 
