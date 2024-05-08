@@ -19,7 +19,13 @@ jobs:
 
       - name: Build my App
         run: npx next build && touch ./out/.nojekyll
-
+      - name: 🗑 Delete old deployment
+        uses: strumwolf/delete-deployment-environment@v2.2.3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: github-pages
+          onlyRemoveDeployments: true
+          
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
