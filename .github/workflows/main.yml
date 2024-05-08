@@ -15,7 +15,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14.x"
-
+      - name: Installing Leaflet
+        run: npm i leaflet && npm i react-leaflet
+        
       - name: Installing my packages
         run: npm ci
 
