@@ -7,6 +7,7 @@ import mapjson from "@/public/maps.json";
 import MapLayerControl from "./LayerControl";
 import PolyLocations from "./PolyLocations";
 import MouseRectangle from "./MouseRectangle";
+import "../globals.css";
 
 function MouseHook({ setMousePosition }) {
   useMapEvent("mousemove", (event) => {
@@ -36,6 +37,7 @@ function Map() {
       </div>
       <div>
         <MapContainer
+          className="map"
           center={[-128, 128]}
           zoom={5}
           crs={CRS.Simple}

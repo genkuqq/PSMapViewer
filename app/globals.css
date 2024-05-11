@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.leaflet-container {
+.map {
   height: 100vh;
+}
+
+.map .mapImage {
+  image-rendering: pixelated;
 }
