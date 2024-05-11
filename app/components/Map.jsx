@@ -36,12 +36,19 @@ function MouseHook({ setMousePosition }) {
 
 function Map(prop) {
   const [mousePosition, setMousePosition] = useState([0, 0]);
+  const [selectedMap, setSelectedMap] = useState(0);
   return (
     <main>
       <div>
-        <p>sonuc?</p>
+        <p>This section for the buttons | Selected Map: {selectedMap}</p>
         {mapjson.map((items) => {
-          return <div key={items.mapid}>{items.mapname}</div>;
+          return (
+            <div key={items.mapid}>
+              <button onClick={() => setSelectedMap(items.mapid)}>
+                {items.mapname}
+              </button>
+            </div>
+          );
         })}
       </div>
       <div>
