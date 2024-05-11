@@ -6,15 +6,30 @@
     "areapath": "",
     "cablespath": "",
     "powernetpath": "",
-    "locations": {
-      "medbay": [
-        [0, 0],
-        [0, 1],
-        [1, 1],
-        [1, 0],
-        [0, 0]
-      ]
-    }
+    "locations": [
+      {
+        "name": "Medbay",
+        "color": "blue",
+        "positions": [
+          [137, 102],
+          [137, 96],
+          [150, 96],
+          [150, 102],
+          [137, 102]
+        ]
+      },
+      {
+        "name": "Library",
+        "color": "green",
+        "positions": [
+          [118, 127],
+          [118, 115],
+          [132, 115],
+          [132, 127],
+          [118, 127]
+        ]
+      }
+    ]
   },
   {
     "mapid": 1,
@@ -23,14 +38,29 @@
     "areapath": "./mapimages/Meta/MetaStationArea.png",
     "cablespath": "./mapimages/Meta/MetaStationCables.png",
     "powernetpath": "./mapimages/Meta/MetaStationPowernet.png",
-    "locations": {
-      "medbay": [
-        [0, 0],
-        [0, 1],
-        [1, 1],
-        [1, 0],
-        [0, 0]
-      ]
-    }
+    "locations": [
+      {
+        "name": "Test 1",
+        "color": "black",
+        "positions": [
+          [137, 102],
+          [137, 96],
+          [150, 96],
+          [150, 102],
+          [137, 102]
+        ]
+      },
+      {
+        "name": "Test 2",
+        "color": "grey",
+        "positions": [
+          [118, 127],
+          [118, 115],
+          [132, 115],
+          [132, 127],
+          [118, 127]
+        ]
+      }
+    ]
   }
 ]

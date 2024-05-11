@@ -1,5 +1,6 @@
 import { LayersControl, ImageOverlay } from "react-leaflet";
 import { latLngBounds } from "leaflet";
+import PolyLocations from "./PolyLocations";
 import "leaflet/dist/leaflet.css";
 export default function MapLayerControl({ mapdata, selectedMap }) {
   return (

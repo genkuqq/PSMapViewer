@@ -7,7 +7,7 @@ const DynamicMap = dynamic(() => import("./components/Map"), {
 export default function Home() {
   return (
     <main>
-      <DynamicMap name={"Delta"} />
+      <DynamicMap />
     </main>
   );
 }
