@@ -3,8 +3,9 @@ import {
   MapContainer,
   LayersControl,
   ImageOverlay,
-  Rectangle,
   useMap,
+  Tooltip,
+  Rectangle,
 } from "react-leaflet";
 import { CRS, latLngBounds } from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -16,7 +17,10 @@ function MouseHook({ setMousePosition }) {
   useEffect(() => {
     const updateMousePosition = (event) => {
       if (event.type == "mousemove") {
-        setMousePosition([event.latlng.lat, event.latlng.lng]);
+        setMousePosition([
+          Math.floor(event.latlng.lng + 1),
+          Math.floor(event.latlng.lat + Math.abs(-255) + 1),
+        ]);
       }
     };
     map.on("mousemove", updateMousePosition);
@@ -32,6 +36,11 @@ function Map(prop) {
   return (
     <main>
       <div>
+        <p>
+          {mousePosition[0]} | {mousePosition[1]}
+        </p>
+      </div>
+      <div>
         <MapContainer
           center={[-128, 128]}
           zoom={5}
@@ -44,16 +53,18 @@ function Map(prop) {
           <MouseHook setMousePosition={setMousePosition} />
           <Rectangle
             bounds={[
-              [Math.floor(mousePosition[0]), Math.floor(mousePosition[1])],
-              [
-                Math.floor(mousePosition[0]) + 1,
-                Math.floor(mousePosition[1]) + 1,
-              ],
+              [mousePosition[1] - 256, mousePosition[0]],
+              [mousePosition[1] - 255, mousePosition[0] - 1],
             ]}
             color={"green"}
-            fill={false}
+            fill={true}
             weight={3}
-          />
+          >
+            <Tooltip sticky direction="top">
+              X: {Math.floor(mousePosition[0])} Y:{" "}
+              {Math.floor(mousePosition[1])}
+            </Tooltip>
+          </Rectangle>
 
           <LayersControl>
             <LayersControl.BaseLayer name="Base" checked>
