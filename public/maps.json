@@ -1,0 +1,19 @@
+[
+  {
+    "mapid": 1,
+    "mapname": "Delta",
+    "basepath": "./base",
+    "areapath": "./area",
+    "wirepath": "./wire",
+    "pipepath": "./pipe",
+    "locations": {
+      "medbay": [
+        [0, 0],
+        [0, 1],
+        [1, 1],
+        [1, 0],
+        [0, 0]
+      ]
+    }
+  }
+]

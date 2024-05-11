@@ -10,6 +10,7 @@ import {
 import { CRS, latLngBounds } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useState } from "react";
+import mapjson from "@/public/maps.json";
 
 function MouseHook({ setMousePosition }) {
   const map = useMap();
@@ -37,6 +38,12 @@ function Map(prop) {
   const [mousePosition, setMousePosition] = useState([0, 0]);
   return (
     <main>
+      <div>
+        <p>sonuc?</p>
+        {mapjson.map((items) => {
+          return <div key={items.mapid}>{items.mapname}</div>;
+        })}
+      </div>
       <div>
         <MapContainer
           center={[-128, 128]}
