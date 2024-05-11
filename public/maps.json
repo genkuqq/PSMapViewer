@@ -2,10 +2,10 @@
   {
     "mapid": 0,
     "mapname": "Delta",
-    "basepath": "./base",
-    "areapath": "./area",
-    "wirepath": "./wire",
-    "pipepath": "./pipe",
+    "basepath": "./mapimages/Delta/DeltaStationBase.png",
+    "areapath": "",
+    "cablespath": "",
+    "powernetpath": "",
     "locations": {
       "medbay": [
         [0, 0],
@@ -19,10 +19,10 @@
   {
     "mapid": 1,
     "mapname": "Meta",
-    "basepath": "./base",
-    "areapath": "./area",
-    "wirepath": "./wire",
-    "pipepath": "./pipe",
+    "basepath": "./mapimages/Meta/MetaStationBase.png",
+    "areapath": "./mapimages/Meta/MetaStationArea.png",
+    "cablespath": "./mapimages/Meta/MetaStationCables.png",
+    "powernetpath": "./mapimages/Meta/MetaStationPowernet.png",
     "locations": {
       "medbay": [
         [0, 0],

@@ -11,6 +11,7 @@ import { CRS, latLngBounds } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useState } from "react";
 import mapjson from "@/public/maps.json";
+import MapLayerControl from "./LayerControl";
 
 function MouseHook({ setMousePosition }) {
   const map = useMap();
@@ -33,7 +34,6 @@ function MouseHook({ setMousePosition }) {
   }, [map, setMousePosition]);
   return null;
 }
-
 function Map(prop) {
   const [mousePosition, setMousePosition] = useState([0, 0]);
   const [selectedMap, setSelectedMap] = useState(0);
@@ -82,22 +82,7 @@ function Map(prop) {
             </Tooltip>
           </Rectangle>
 
-          <LayersControl>
-            <LayersControl.BaseLayer name="Base" checked>
-              <ImageOverlay
-                url={
-                  "./mapimages/" +
-                  prop.name +
-                  "/" +
-                  prop.name +
-                  "StationBase.png"
-                }
-                /* todo: this section need should be dynamic for the smaller or larger maps */
-                bounds={latLngBounds([0, 0], [-255, 255])}
-                opacity={1}
-              />
-            </LayersControl.BaseLayer>
-          </LayersControl>
+          <MapLayerControl mapdata={mapjson} selectedMap={selectedMap} />
         </MapContainer>
       </div>
     </main>
